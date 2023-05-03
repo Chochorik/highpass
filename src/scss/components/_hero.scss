@@ -1,0 +1,274 @@
+.hero {
+  &__container {
+    padding-top: 41px;
+    padding-bottom: 30px;
+
+    @include tablet {
+      padding-top: 34px;
+      padding-bottom: 32px;
+    }
+
+    @include small-tablet {
+      padding-top: 36px;
+    }
+
+    @include mobile {
+      padding-top: 30px;
+      padding-bottom: 20px;
+    }
+  }
+
+  &__grid {
+    @include grids;
+
+    @include tablet {
+      row-gap: 27px;
+    }
+
+    @include small-tablet {
+      grid-template-columns: repeat(4, 1fr);
+      row-gap: 26px;
+    }
+
+    @include mobile {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+    }
+  }
+
+  &__grid-item {
+    grid-column: span 3;
+
+    @include small-tablet {
+      grid-column: span 1;
+    }
+
+    @include mobile {
+      grid-column: span 1;
+    }
+  }
+
+  &__title {
+    margin-bottom: 16px;
+    @include font-normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 104%;
+
+    @include tablet {
+      margin-bottom: 25px;
+    }
+
+    @include small-tablet {
+      margin-bottom: 17px;
+      font-size: 22px;
+    }
+
+    @include mobile {
+      margin-bottom: 16px;
+      font-size: 18px;
+    }
+  }
+
+  &__grid-item-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 60px;
+    height: 100%;
+    @include image-set("../img/hero-1_desktop");
+    @include bg-cover;
+    position: relative;
+    // grid
+    grid-column: span 6;
+    grid-row: span 2;
+
+    @include tablet {
+      @include image-set("../img/hero-1_tablet");
+      padding: 15px 30px 30px 30px;
+      max-height: 623px;
+      grid-column: span 4;
+    }
+
+    @include small-tablet {
+      max-height: 452px;
+      @include image-set("../img/hero-1_small-tablet");
+      padding: 28px;
+      grid-column: span 2;
+    }
+
+    @include mobile {
+      min-height: 422px;
+      @include image-set("../img/hero-1_mobile");
+      padding: 29px;
+      grid-column: span 2;
+    }
+  }
+
+  &__grid-item-2 {
+    grid-column: span 6;
+    height: 100%;
+
+    @include tablet {
+      grid-column: span 4;
+    }
+
+    @include small-tablet {
+      grid-column: span 2;
+    }
+
+    @include mobile {
+      padding-top: 4px;
+      grid-column: span 2;
+    }
+  }
+
+  &__grid-item-3 {
+    grid-column: span 3;
+    height: 100%;
+
+    @include tablet {
+      grid-column: span 2;
+    }
+
+    @include small-tablet {
+      grid-column: span 1;
+    }
+
+    @include mobile {
+      grid-column: span 1;
+    }
+  }
+
+  &__grid-item-4 {
+    grid-column: span 3;
+    height: 100%;
+
+    @include tablet {
+      grid-column: span 2;
+    }
+
+    @include small-tablet {
+      grid-column: span 1;
+    }
+
+    @include mobile {
+      grid-column: span 1;
+    }
+  }
+
+  &__tag {
+    position: absolute;
+    top: 16px;
+    right: 15px;
+    padding: 7px 15px;
+    background-color: var(--dark-color);
+    margin: 0;
+    color: var(--light-color);
+    font-family: "Roboto";
+    @include font-normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+
+    @include mobile {
+      top: 5px;
+      right: 5px;
+      padding: 4px 7px;
+      font-size: 11px;
+      line-height: 14px;
+    }
+  }
+
+  &__artist {
+    margin: 0;
+    font-family: "Roboto";
+    @include font-normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 19px;
+    color: var(--light-color);
+
+    @include tablet {
+      margin-bottom: 9px;
+      font-size: 16px;
+      line-height: 19px;
+    }
+
+    @include small-tablet {
+      margin-bottom: 14px;
+    }
+
+    @include mobile {
+      margin-bottom: 10px;
+      font-size: 14px;
+      line-height: 16px;
+    }
+  }
+
+  &__attention {
+    margin-bottom: 19px;
+    @include font-normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 104%;
+    color: var(--light-color);
+
+    @include tablet {
+      margin-bottom: 22px;
+      font-size: 34px;
+      line-height: 100%;
+    }
+
+    @include small-tablet {
+    line-height: 90%;
+    }
+
+    @include mobile {
+      margin-bottom: 14px;
+      font-size: 24px;
+      line-height: 110%;
+    }
+  }
+
+  &__button {
+    display: inline-block;
+    padding: 13px 19px;
+    background-color: var(--orange-color);
+    font-family: "Roboto";
+    color: var(--light-color);
+    border: 3px solid transparent;
+    @include font-normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    transition: background-color .3s ease, border-color .3s ease;
+
+    @include tablet {
+      padding: 14px 20px;
+    }
+
+    @include mobile {
+      padding: 10px 20px;
+      font-size: 14px;
+      line-height: 16px;
+    }
+  }
+
+  &__button:focus:not(:hover):not(:active) {
+    border-color: var(--active-color);
+    background-color: var(--hover-color);
+  }
+
+  &__button:hover {
+    background-color: var(--focus-color);
+  }
+
+  &__button:active {
+    background-color: var(--active-color);
+  }
+
+  .hero__picture img {
+    width: 100%;
+  }
+}

@@ -1,0 +1,278 @@
+.about-us {
+  padding-top: 32px;
+  padding-bottom: 34px;
+
+  @include small-tablet {
+    padding-bottom: 31px;
+  }
+
+  @include mobile {
+    padding-top: 25px;
+    padding-bottom: 15px;
+  }
+
+  &__container-main {
+    background-color: var(--dark-color);
+  }
+
+  &__container-left {
+    grid-column: span 6;
+
+    @include tablet {
+      grid-column: span 4;
+    }
+
+    @include small-tablet {
+      grid-column: span 3;
+    }
+
+    @include mobile {
+      grid-column: span 2;
+    }
+  }
+
+  &__container-right {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    position: relative;
+    @include image-set("../img/about-us_desktop");
+    background-repeat: no-repeat;
+    background-size: auto auto;
+    background-position: center 34px;
+    padding-top: 33px;
+    align-self: flex-end;
+    grid-column: span 6;
+
+    @include big-tablet {
+      background-size: 100% 70%;
+    }
+
+    @include tablet {
+      min-height: 545px;
+      @include image-set("../img/about-us_tablet");
+      background-size: 100% 60%;
+      grid-column: span 4;
+    }
+
+    @include medium-tablet {
+      @include image-set("../img/about-us_small-tablet");
+      background-size: 100% calc(100% - 200px);
+    }
+
+    @include small-tablet {
+      background-size: auto auto;
+      @include image-set("../img/about-us_small-tablet");
+      grid-column: span 3;
+    }
+
+    @include mobile {
+      min-height: 448px;
+      background-size: 100% 65%;
+      @include image-set("../img/about-us_mobile");
+      background-position: top center;
+      padding-top: 0;
+      grid-column: span 2;
+    }
+  }
+
+  &__form-container {
+    width: 100%;
+    align-self: flex-end;
+
+    @include small-tablet {
+      margin-bottom: 7px;
+    }
+  }
+
+  &__container {
+    @include grids;
+    align-items: center;
+    padding-top: 30px;
+    padding-bottom: 70px;
+
+    @include tablet {
+      align-items: flex-start;
+      padding-bottom: 83px;
+    }
+
+    @include small-tablet {
+      padding-bottom: 65px;
+    }
+
+    @include mobile {
+      padding-bottom: 52px;
+      row-gap: 23px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 5px;
+    @include font-normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 31px;
+    color: var(--light-color);
+
+    @include mobile {
+      font-size: 18px;
+      line-height: 23px;
+    }
+  }
+
+  &__description {
+    font-family: "Roboto";
+    @include font-normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+    color: var(--grey-color);
+
+    @include mobile {
+      font-size: 14px;
+      line-height: 25px;
+    }
+  }
+
+  &__mailing {
+    margin-bottom: 16px;
+    @include font-normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 22px;
+    color: var(--light-color);
+
+    @include small-tablet {
+      margin-bottom: 19px;
+    }
+
+    @include mobile {
+      margin-top: 22px;
+      margin-bottom: 15px;
+      font-size: 18px;
+      line-height: 22px;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: row;
+
+    @include tablet {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  &__label {
+    position: relative;
+    margin-right: 30px;
+    max-width: 474px;
+    width: 100%;
+  }
+
+  &__error {
+    position: absolute;
+    left: 23px;
+    font-family: "Roboto";
+    @include font-normal;
+    font-weight: 400;
+    font-size: 9px;
+    line-height: 11px;
+    color: var(--error-color);
+    opacity: 0;
+    transition: opacity .3s ease;
+  }
+
+  &__error.active {
+    opacity: 1;
+  }
+
+  &__input {
+    margin-right: 30px;
+    padding-left: 23px;
+    width: 100%;
+    height: 50px;
+    background-color: var(--darkest-grey-color);
+    border: 1px solid transparent;
+    font-family: "Roboto";
+    @include font-normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: var(--light-color);
+    transition: border-color .3s ease, color .3s ease;
+
+    @include tablet {
+      max-width: 342px;
+      margin-bottom: 20px;
+    }
+
+    @include mobile {
+      height: 40px;
+    }
+  }
+
+  &__input::placeholder{
+    font-family: "Roboto";
+    @include font-normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: var(--grey-color);
+    transition: color .3s ease;
+
+    @include mobile {
+      font-size: 14px;
+      line-height: 16px;
+    }
+  }
+
+  &__input:focus:not(:hover):not(:active) {
+    border-color: var(--hover-color);
+  }
+
+  &__input:hover::placeholder {
+    color: var(--hover-color);
+  }
+
+  &__input:active {
+    border-color: none;
+  }
+
+  &__btn {
+    padding: 12px 19px;
+    font-family: "Roboto";
+    font-weight: 600;
+    border: 3px solid transparent;
+    @include font-normal;
+    font-size: 16px;
+    line-height: 19px;
+    color: var(--light-color);
+    background-color: var(--orange-color);
+    transition: background-color .3s ease, border-color .3s ease;
+
+    @include small-tablet {
+      padding: 13px 19px;
+    }
+
+    @include mobile {
+      padding: 10px 19px;
+      font-size: 14px;
+      line-height: 16px;
+    }
+  }
+
+  &__btn:focus:not(:hover):not(:active) {
+    border-color: var(--active-color);
+    background-color: var(--hover-color);
+  }
+
+  &__btn:hover {
+    background-color: var(--focus-color);
+  }
+
+  &__btn:active {
+    background-color: var(--active-color);
+  }
+}

@@ -1,0 +1,40 @@
+@import "./mixins/breakpoint";
+
+// если вы хотите использовать sass-переменные - удалите root
+// colors
+:root {
+  // base
+  --font-family: "TtFirsNeue", "Roboto", sans-serif;
+  --content-width: 1290px;
+  --container-offset: 100px;
+  --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
+
+  @include tablet {
+    --container-offset: 31px;
+  }
+
+  @include small-tablet {
+    --container-offset: 27px;
+  }
+
+  @include mobile {
+    --container-offset: 21px;
+  }
+
+  // colors
+  --light-color: #fff;
+  --dark-color: #202020;
+  --orange-color: #FF6E30;
+  --grey-color: #CACACA;
+  --background-color: #fff;
+  --darkest-grey-color: #4A4A4A;
+  --light-grey-color: #999999;
+  --contacts-inputs-color: #E9E9E9;
+
+  --focus-color: #BC572B;
+  --hover-color: #FF6E30;
+  --active-color: #CE4307;
+
+  --error-color: #F06666;
+  --dark-error-color: #FF3030;
+}
