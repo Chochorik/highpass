@@ -36,7 +36,7 @@
     flex-direction: row;
     height: 100%;
     position: relative;
-    @include image-set("../img/about-us_desktop");
+    @include image-set('../img/about-us_desktop');
     background-repeat: no-repeat;
     background-size: auto auto;
     background-position: center 34px;

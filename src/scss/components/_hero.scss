@@ -76,7 +76,7 @@
     justify-content: flex-end;
     padding: 60px;
     height: 100%;
-    @include image-set("../img/hero-1_desktop");
+    @include image-set('../img/hero-1_desktop');
     @include bg-cover;
     position: relative;
     // grid
